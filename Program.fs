@@ -123,3 +123,12 @@ let template = arm {
     // Needs to be surfaced from Farmer webapp
     //output "APPINSIGHTS_INSTRUMENTATIONKEY" app.AppInsightsKey
 }
+
+// Export to ARM
+template
+|> Writer.quickWrite "output"
+
+// Or deploy
+// template
+// |> Deploy.execute "my-resource-group" []
+// |> printfn "%A"
